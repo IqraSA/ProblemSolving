@@ -84,5 +84,5 @@ class Solution(object):
             else:
                 su=su+dic[key]
                 idx=idx+1
-        
+
         return su

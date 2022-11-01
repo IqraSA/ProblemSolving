@@ -37,9 +37,7 @@ class Solution(object):
 
         for string in strs[1:]:
             while string[:len(prefix)] != prefix and prefix:
-                prefix = prefix[:len(prefix)-1]
+                prefix = prefix[:-1]
 
-        res = prefix
-            
-        return res
+        return prefix
         

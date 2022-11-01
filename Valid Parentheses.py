@@ -37,18 +37,15 @@ class Solution(object):
         openlis=['(','[','{']
         closelis=[')',']','}']
         stack=[]
-        for i in s :
+        for i in s:
             if i in openlis:
                 stack.append(i)
             elif i in closelis:
-                    pos = closelis.index(i)
-                    if ((len(stack) > 0) and (openlis[pos] == stack[len(stack)-1])):
-                        stack.pop()
-                    else:
-                        return False
+                pos = closelis.index(i)
+                if stack and openlis[pos] == stack[-1]:
+                    stack.pop()
+                else:
+                    return False
 
-        if len(stack) == 0:
-            return True
-        else:
-            return False
+        return not stack
         
